@@ -5,13 +5,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "192.168.1.45",
+        hostname: process.env.NEXT_PUBLIC_HOST as string,
       },
     ],
   },
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
   },
+  output: "standalone",
 };
 
 export default nextConfig;
